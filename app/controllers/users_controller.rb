@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
     
   def step2
-    session[:date] = user_params[:date]
+    session[:book_date] = user_params[:book_date]
     @user = User.new
     
     # 変更
@@ -28,12 +28,15 @@ class UsersController < ApplicationController
   end
   
   def confirm
-    session[:name_kanji] = user_params[:name_kanji]
-    session[:name_kana] = user_params[:name_kana]
-    session[:birth] = user_params[:birth]
+    session[:name_first_kanji] = user_params[:name_first_kanji]
+    session[:name_last_kanji] = user_params[:name_last_kanji]
+    session[:name_first_kana] = user_params[:name_first_kana]
+    session[:name_last_kana] = user_params[:name_last_kana]
+    session[:birthday] = user_params[:birthday]
     session[:phonenumber] = user_params[:phonenumber]
     session[:mailaddress] = user_params[:mailaddress]
     @user = User.new
+    @users = User.all
     # binding.pry
     
     # 変更
@@ -56,10 +59,12 @@ class UsersController < ApplicationController
 
   def create
     User.create(
-      date: session[:date],
-      name_kanji: session[:name_kanji],
-      name_kana: session[:name_kana],
-      birth: session[:birth],
+      book_date: session[:book_date],
+      name_first_kanji: session[:name_first_kanji],
+      name_last_kanji: session[:name_last_kanji],
+      name_first_kana: session[:name_first_kana],
+      name_last_kana: session[:name_last_kana],
+      birthday: session[:birthday],
       phonenumber: session[:phonenumber],
       mailaddress: session[:mailaddress]
     )
@@ -76,10 +81,12 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(
     # params.permit(
-      :date, 
-      :name_kanji, 
-      :name_kana, 
-      :birth, 
+      :book_date, 
+      :name_first_kanji, 
+      :name_last_kanji, 
+      :name_first_kana, 
+      :name_last_kana, 
+      :birthday, 
       :phonenumber, 
       :mailaddress
     )
