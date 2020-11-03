@@ -16,7 +16,6 @@ class UsersController < ApplicationController
   
   def step1
     @user = User.new
-    # logger.debug(@user)
   end
     
   def step2
@@ -24,20 +23,18 @@ class UsersController < ApplicationController
     @user = User.new
     
     # 変更
-    # logger.debug(user_params)
     # @user = User.new(user_params)
-    # logger.debug(@user)
     # render :step1 if @user.invalid?
   end
   
   def confirm
-    # binding.pry
     session[:name_kanji] = user_params[:name_kanji]
     session[:name_kana] = user_params[:name_kana]
     session[:birth] = user_params[:birth]
     session[:phonenumber] = user_params[:phonenumber]
     session[:mailaddress] = user_params[:mailaddress]
     @user = User.new
+    # binding.pry
     
     # 変更
     # @user = User.new(user_params)
@@ -50,8 +47,6 @@ class UsersController < ApplicationController
     
   # def create
   #   @user = User.new(user_params)
-  #   logger.debug(@user)
-  #   logger.debug(user_params)
   #   @user.save
   #   render :next and return if params[:back]
   #   render :confirm and return if !@user.save
@@ -66,7 +61,7 @@ class UsersController < ApplicationController
       name_kana: session[:name_kana],
       birth: session[:birth],
       phonenumber: session[:phonenumber],
-      mailadress: session[:mailaddress]
+      mailaddress: session[:mailaddress]
     )
     
     # 変更
@@ -79,9 +74,8 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    # params.require(:user).permit(
-    params.permit(
-    
+    params.require(:user).permit(
+    # params.permit(
       :date, 
       :name_kanji, 
       :name_kana, 
