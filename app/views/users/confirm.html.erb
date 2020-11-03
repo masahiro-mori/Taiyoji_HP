@@ -1,0 +1,69 @@
+<%= render partial: "user", user: @user %>
+
+<%= form_for @user, url: users_path, method: :post do |f| %>
+
+  <main>
+    <section class="form-box">
+      <h3>
+        <span class="num">
+          <span class="num_st">STEP</span>
+          <span class="num_nm">3</span>
+        </span>
+        ご予約内容の確認
+      </h3>
+      
+      <div class="confirm-book">
+        <div class="book-info">ご予約情報</div>
+          <div class="confirm-book-block">
+            <div class="book-day">
+              <label class="book-day-label">ご予約日
+              <%# 追記 %>
+              <%= @user.date %>
+              <%# 追記 %>
+              
+            </div>
+            <div class="book-time">
+              <label class="book-time-label">ご予約時間
+            </div>
+          </div>
+        <div class="step-back-button">
+          <%#=
+          <%= f.submit "←日時を変更する", name: :back, :class => "step-back"%>
+          <button class="step-back">←日時を変更する</button>
+        </div>
+      </div>
+        
+      <div class="user-book-info">
+        <div class="user-info">お客様情報</div>
+          <div class="user-info-book-block">
+            <div class="user-name">
+              <label class="user-name-label">お名前（漢字）</label>
+            </div>
+            <div class="user-name-kana">
+              <label class="user-name-kana-label">お名前（カナ）</label>
+            </div>
+            <div class="user-birth">
+              <label class="user-birth-label">生年月日</label>
+            </div>
+            <div class="user-phonenumber">
+              <label class="user-phonenumber-label">電話番号</label>
+            </div>
+            <div class="user-mailadress">
+              <label class="user-mailadress-label">メールアドレス</label>
+            </div>
+          </div>
+            <div class="step-back-button">
+              <%#=
+              <%= f.submit "←お客様情報を変更する", name: :back, :class => "step-back" %>
+              <button class="step-back">←お客様情報を変更する</button>
+            </div>
+        </div>
+      </div>
+        
+    </section>
+  </main>
+  <section class="form-info">
+    <%= f.submit '予約を確定', :class => 'confirm-button'%>
+  </section>
+
+<% end %>

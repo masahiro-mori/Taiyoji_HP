@@ -1,0 +1,258 @@
+header {
+  background-color: #ffd700;
+  margin-bottom: 10px;
+  padding: 10px 10px;
+}
+
+header > h1, header > h2{
+  text-align: center;
+}
+
+.a-top {
+  text-align: center;
+}
+
+.a-top:link, 
+.a-top:visited, 
+.a-top:hover, 
+.a-top:active {
+  color: black;
+  text-decoration: none;
+}
+
+ul {
+  text-align: center;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+  margin: 5px 10px;
+  padding: 0 2rem; 
+}
+
+main {
+  border: solid 1px gray;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0px 80px 100px;
+}
+
+h3 {
+  border-bottom: 1px solid #ededed;
+  position: relative;
+  margin-top: 0;
+  padding: 20px 5px 15px 35px;
+  font-size: 24px;
+  line-height: 64px;
+  font-weight: 400;
+  font-family: -apple-
+}
+
+
+.num {
+  position: absolute;
+  background: #000;
+  color: #FFF;
+  margin: 0;
+  font-size: 32px;
+  width: 64px;
+  height: 64px;
+  left: -46px;
+  text-align: center;
+  border-radius: 100%;
+  font-family: 'Cardo', serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.num_st {
+  font-size: 12px;
+  line-height: 1;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+}
+
+.num_nm {
+  font-size: 32px;
+  line-height: 1;
+  font-family: 'Cardo', serif;
+}
+
+label {
+  margin-left: 35px;
+}
+
+.required {
+  background-color: #ffd700;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 5px 12px;
+  color: white;
+}
+
+.date-select {
+  margin-left: 35px;
+  margin-top: 10px;
+}
+
+.form-info {
+  margin-top: 20px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: white;
+  box-shadow: 0 2px 13px 0 rgba(0,0,0,0.1);
+}
+
+.next-button, 
+.valification-button, 
+.confirm-button {
+  border: none;
+  width: 180px;
+  height: 60px;
+  font-size: 1.15rem;
+  padding: 0;
+  margin: 0 0 0 auto;
+  display: block;
+  background-color: #fff352;
+  color:#black;
+}
+
+.next-button:hover, 
+.valification-button:hover, 
+.confirm-button:hover {
+  background-color: #ffd700;
+  transition: 0.7s;
+}
+
+input {
+  width: 100%;
+  height: 30px;
+  display: inline-block;
+}
+
+.input {
+  margin-left: 35px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.name {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.policy {
+  border: 1px solid rgb(118, 118, 118) ;
+  border-radius : 3px;
+  margin-left: 35px;
+}
+
+.form-agree {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 70px;
+  width: 240px;
+  box-sizing: border-box;
+  border: 1px solid #ffd700;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #ffd700;
+}
+
+.form-agree:hover {
+  color: white;
+  background-color: #ffd700;
+  transition: 0.7s;
+}
+
+.checkbox-text {
+  transform: scale(1.4)
+}
+
+.user-info, .book-info {
+  padding :20px;
+  margin: 0;
+  width: auto;
+  color: white;
+  background-color: #ffd700;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+}
+
+.confirm-book, .user-book-info {
+  border: solid 1px #d3d3d3;
+  margin-top: 20px;
+  width: auto;
+  height: auto;
+}
+
+.confirm-book-block, .user-info-book-block{
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: solid 1px #d3d3d3;
+}
+
+.book-day, 
+.book-time,
+.user-name, 
+.user-name-kana, 
+.user-birth, 
+.user-phonenumber, 
+.user-mailaddress {
+  flex: 1;
+  flex-basis: 50%;
+  max-width: 50%;
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding: 10px;
+  height: 100px;
+  border-bottom: solid 1px #d3d3d3;
+  box-sizing: border-box;
+}
+
+.book-day, 
+.book-time, 
+.user-mailaddress {
+  border-bottom: none;
+}
+
+.book-day , 
+.user-name, 
+.user-birth, 
+.user-mailaddress {
+  border-right: solid 1px #d3d3d3;
+  box-sizing: border-box;
+}  
+
+.book-day-label, 
+.book-time-label,
+.user-name-label, 
+.user-name-kana-label, 
+.user-birth-label, 
+.user-phonenumber-label, 
+.user-mailaddress-label {
+  border-bottom: solid 1px #d3d3d3;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.step-back {
+  display: flex;
+  margin: 0 0 0 auto;
+  border-style: none;
+  color: white;
+  background-color: #24140e;
+  font-size: 15px;
+  height: 2rem;
+  align-items: center;
+}

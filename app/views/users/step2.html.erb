@@ -1,0 +1,91 @@
+<%= render partial: "user" %>
+  
+  <%= form_for @user, url: confirm_users_path, method: :get do |f| %>
+  
+    <main>
+      <section class="form-box">
+        <h3>
+          <span class="num">
+            <span class="num_st">STEP</span>
+            <span class="num_nm">2</span>
+          </span>
+          お客様情報の入力
+        </h3>
+        
+        <div class="user-input-name-kanji">  
+          <label>お名前（漢字）</label>
+          <span class="required">必須</span>
+            <div class="input">
+              <div class="name">
+                <%= f.text_field :name_kanji, :placeholder => "姓" %>
+              </div>
+              <div class="name">
+                <%= f.text_field :name_kanji, :placeholder => "名" %>
+            </div>
+            </div>
+        </div>
+        
+        <div class="user-input-name-kana">  
+          <label>お名前（カナ）</label>
+          <span class="required">必須</span>
+            <div class="input">
+              <div class="name">
+                <%= f.text_field :name_kana, :placeholder => "セイ" %>
+              </div>
+              <div class="name">
+                <%= f.text_field :name_kana, :placeholder => "メイ" %>
+              </div>
+            </div>
+        </div>
+        </div>
+        
+        <div class="user-input-birth">  
+          <label>生年月日</label>
+          <span class="required">必須</span>
+          <div class="input">
+            <%= f.date_select :birth, use_month_numbers: true,
+            start_year: 1930,
+            end_year: (Time.now.year - 18),
+            default: Date.new(Time.now.year - 18, 1, 1),
+            with_css_classes: "input"
+            %>
+          </div>
+        </div>
+        
+        <div class="user-input-phonenumber">  
+          <label>お電話番号（半角）</label>
+          <span class="required">必須</span>
+            <div class="input">
+            <%= f.text_field :phonenumber, :placeholder => "お電話番号（半角）"%>
+            </div>
+        </div>
+        
+        <div class="user-input-mailaddress">  
+          <label>メールアドレス（半角）</label>
+          <span class="required">必須</span>
+            <div class="input">
+              <%= f.email_field :mailaddress, :placeholder => "メールアドレス（半角）"%>
+            </div>
+        </div>
+        
+        <div class="privacypolicy">  
+          <label>プライバシーポリシー</label>
+          <span class="required">必須</span>
+            <p class="policy"> プライバシーポリシー</p>
+        </div>
+        
+        <div class="container">
+          <div class="form-agree">
+            <div class=" agree-position custom-checkbox checkbox-text">
+              <input type="checkbox" class="custom-control-input" id="custom-check-1" style="transform:scale(2);">
+              <label class="agree-text custom-control-label" for="custom-check-1">上記に同意する</label>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <section class="form-info">
+      <%= f.submit '確認する', :class => 'valification-button'%>
+    </section>
+  <% end %>
