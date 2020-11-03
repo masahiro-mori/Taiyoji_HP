@@ -12,18 +12,25 @@
         ご予約内容の確認
       </h3>
       
+      <%#
+      <% @users.each do |user| %>
+      
       <div class="confirm-book">
         <div class="book-info">ご予約情報</div>
           <div class="confirm-book-block">
-            <div class="book-day">
-              <label class="book-day-label">ご予約日
-              <%# 追記 %>
+            <div class="book_date">
+              <label class="book_date-label">ご予約日
+              <div class="book_date-info">
+              <%#  
               <%= @user.date %>
-              <%# 追記 %>
+              </div>
               
             </div>
             <div class="book-time">
               <label class="book-time-label">ご予約時間
+              <div class="book-time-info">
+                
+              </div>
             </div>
           </div>
         <div class="step-back-button">
@@ -38,18 +45,23 @@
           <div class="user-info-book-block">
             <div class="user-name">
               <label class="user-name-label">お名前（漢字）</label>
+              <div class="user-name-kanji-info"></div>
             </div>
             <div class="user-name-kana">
               <label class="user-name-kana-label">お名前（カナ）</label>
+              <div class="user-name-kana-info"></div>
             </div>
-            <div class="user-birth">
-              <label class="user-birth-label">生年月日</label>
+            <div class="user-birthday">
+              <label class="user-birthday-label">生年月日</label>
+              <div class="user-birhday-info"></div>
             </div>
             <div class="user-phonenumber">
               <label class="user-phonenumber-label">電話番号</label>
+              <div class="user-phonenumber-kanji-info"></div>
             </div>
-            <div class="user-mailadress">
-              <label class="user-mailadress-label">メールアドレス</label>
+            <div class="user-mailaddress">
+              <label class="user-mailaddress-label">メールアドレス</label>
+              <div class="user-mailaddress-kanji-info"></div>
             </div>
           </div>
             <div class="step-back-button">
@@ -58,6 +70,10 @@
               <button class="step-back">←お客様情報を変更する</button>
             </div>
         </div>
+        
+        <%#
+        <% end %>
+        
       </div>
         
     </section>

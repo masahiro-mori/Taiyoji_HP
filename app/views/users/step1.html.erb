@@ -12,12 +12,12 @@
   
 <%= form_for @user, url: step2_users_path, method: :post do |f| %>
 
-  <div class="user-input-date">  
+  <div class="user-input-book_date">  
     <label>ご希望の日時</label>
     <span class="required">必須</span>
     <section class="form-box">
-      <div class="date-select">
-        <%= f.date_field :date %>
+      <div class="book_date-select">
+        <%= f.date_field :book_date %>
       </div>
     </section>
   </div>

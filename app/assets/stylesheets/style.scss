@@ -94,7 +94,7 @@ label {
   color: white;
 }
 
-.date-select {
+.book_date-select {
   margin-left: 35px;
   margin-top: 10px;
 }
@@ -202,11 +202,11 @@ input {
   border-bottom: solid 1px #d3d3d3;
 }
 
-.book-day, 
+.book_date, 
 .book-time,
 .user-name, 
 .user-name-kana, 
-.user-birth, 
+.user-birthday, 
 .user-phonenumber, 
 .user-mailaddress {
   flex: 1;
@@ -220,25 +220,25 @@ input {
   box-sizing: border-box;
 }
 
-.book-day, 
+.book_date, 
 .book-time, 
 .user-mailaddress {
   border-bottom: none;
 }
 
-.book-day , 
+.book_date, 
 .user-name, 
-.user-birth, 
+.user-birthday, 
 .user-mailaddress {
   border-right: solid 1px #d3d3d3;
   box-sizing: border-box;
 }  
 
-.book-day-label, 
+.book_date-label, 
 .book-time-label,
 .user-name-label, 
 .user-name-kana-label, 
-.user-birth-label, 
+.user-birthday-label, 
 .user-phonenumber-label, 
 .user-mailaddress-label {
   border-bottom: solid 1px #d3d3d3;
