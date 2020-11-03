@@ -28,16 +28,16 @@ class UsersController < ApplicationController
   end
   
   def confirm
-    session[:name_first_kanji] = user_params[:name_first_kanji]
-    session[:name_last_kanji] = user_params[:name_last_kanji]
-    session[:name_first_kana] = user_params[:name_first_kana]
-    session[:name_last_kana] = user_params[:name_last_kana]
-    session[:birthday] = user_params[:birthday]
-    session[:phonenumber] = user_params[:phonenumber]
-    session[:mailaddress] = user_params[:mailaddress]
-    @user = User.new
-    @users = User.all
-    # binding.pry
+    session[:name_first_kanji]  = user_params[:name_first_kanji]
+    session[:name_last_kanji]   = user_params[:name_last_kanji]
+    session[:name_first_kana]   = user_params[:name_first_kana]
+    session[:name_last_kana]    = user_params[:name_last_kana]
+    session[:birthday]          = user_params[:birthday]
+    session[:phonenumber]       = user_params[:phonenumber]
+    session[:mailaddress]       = user_params[:mailaddress]
+    @user   = User.new
+    @users  = User.all
+    binding.pry
     
     # 変更
     # @user = User.new(user_params)
@@ -59,14 +59,14 @@ class UsersController < ApplicationController
 
   def create
     User.create(
-      book_date: session[:book_date],
+      book_date:        session[:book_date],
       name_first_kanji: session[:name_first_kanji],
-      name_last_kanji: session[:name_last_kanji],
-      name_first_kana: session[:name_first_kana],
-      name_last_kana: session[:name_last_kana],
-      birthday: session[:birthday],
-      phonenumber: session[:phonenumber],
-      mailaddress: session[:mailaddress]
+      name_last_kanji:  session[:name_last_kanji],
+      name_first_kana:  session[:name_first_kana],
+      name_last_kana:   session[:name_last_kana],
+      birthday:         session[:birthday],
+      phonenumber:      session[:phonenumber],
+      mailaddress:      session[:mailaddress]
     )
     
     # 変更
