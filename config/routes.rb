@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :new, :create] do
     collection do
       get 'step1'   #予約日時登録
-      get 'step2'   #名前（漢字・カナ）・生年月日・電話番号・メールアドレス登録
-      get 'confirm' #確認画面、確定ボタンでcreateが走る
+      post 'step2'   #名前（漢字・カナ）・生年月日・電話番号・メールアドレス登録
+      post 'confirm' #確認画面、確定ボタンでcreateが走る
     
     # 変更点
       # get :step1
