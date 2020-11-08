@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   
   def step1
     @user = User.new
+    # @tmp  = "aaa"
   end
     
   def step2
@@ -33,11 +34,24 @@ class UsersController < ApplicationController
     session[:name_first_kana]   = user_params[:name_first_kana]
     session[:name_last_kana]    = user_params[:name_last_kana]
     session[:birthday]          = user_params[:birthday]
+    # session[:birthday]          = user_params["birthday(2i)"]
+    # session[:birthday]          = user_params["birthday(3i)"]
     session[:phonenumber]       = user_params[:phonenumber]
     session[:mailaddress]       = user_params[:mailaddress]
     @user   = User.new
-    @users  = User.all
-    binding.pry
+    
+    
+    @book_date        = session[:book_date]
+    @name_first_kanji = session[:name_first_kanji]
+    @name_last_kanji  = session[:name_last_kanji]
+    @name_first_kana  = session[:name_first_kana]
+    @name_last_kana   = session[:name_last_kana]
+    @birthday         = session[:birthday]
+    @phonenumber      = session[:phonenumber]
+    @mailaddress      = session[:mailaddress]
+    
+    # @users  = User.all
+    # binding.pry
     
     # 変更
     # @user = User.new(user_params)
@@ -91,5 +105,15 @@ class UsersController < ApplicationController
       :mailaddress
     )
   end
+  
+  
+  # def birthday_join
+  #   # パラメータ取得
+  #   date = params[:user][:birthday]
+
+  #   # 年月日別々できたものを結合して新しいDate型変数を作って返す
+  #   Date.new date["birthday(1i)"].to_i,date["birthday(2i)"].to_i,date["birthday(3i)"].to_i
+
+  # end
   
 end

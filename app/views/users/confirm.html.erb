@@ -21,8 +21,12 @@
             <div class="book_date">
               <label class="book_date-label">ご予約日
               <div class="book_date-info">
-              <%#  
-              <%= @user.date %>
+                
+              <%= @book_date %>
+              
+              <%#
+              <% binding.pry %>
+              
               </div>
               
             </div>
@@ -45,23 +49,35 @@
           <div class="user-info-book-block">
             <div class="user-name">
               <label class="user-name-label">お名前（漢字）</label>
-              <div class="user-name-kanji-info"></div>
+              <div class="user-name-kanji-info">
+                <%= @name_first_kanji %>
+                <%= @name_last_kanji %>
+              </div>
             </div>
             <div class="user-name-kana">
               <label class="user-name-kana-label">お名前（カナ）</label>
-              <div class="user-name-kana-info"></div>
+              <div class="user-name-kana-info">
+                <%= @name_first_kana %>
+                <%= @name_last_kana %>
+              </div>
             </div>
             <div class="user-birthday">
               <label class="user-birthday-label">生年月日</label>
-              <div class="user-birhday-info"></div>
+              <div class="user-birhday-info">
+                <%= @birthday %>
+              </div>
             </div>
             <div class="user-phonenumber">
               <label class="user-phonenumber-label">電話番号</label>
-              <div class="user-phonenumber-kanji-info"></div>
+              <div class="user-phonenumber-info">
+                <%= @phonenumber %>
+              </div>
             </div>
             <div class="user-mailaddress">
               <label class="user-mailaddress-label">メールアドレス</label>
-              <div class="user-mailaddress-kanji-info"></div>
+              <div class="user-mailaddress-info">
+                <%= @mailaddress %>
+              </div>
             </div>
           </div>
             <div class="step-back-button">

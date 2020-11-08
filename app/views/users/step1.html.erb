@@ -1,5 +1,8 @@
 <%= render partial: "user" %>
 
+
+
+<%= form_for @user, url: step2_users_path, method: :post do |f| %>
 <main>
 <section class="form-box">
   <h3>
@@ -8,10 +11,9 @@
       <span class="num_nm">1</span>
     </span>
     日時を選択
+    <%= @tmp %>
   </h3>
   
-<%= form_for @user, url: step2_users_path, method: :post do |f| %>
-
   <div class="user-input-book_date">  
     <label>ご希望の日時</label>
     <span class="required">必須</span>
